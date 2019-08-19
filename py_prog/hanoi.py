@@ -10,7 +10,7 @@ n = int(input("n = "))
 def print_pegs(pegs):
     """Prints the pegs and the disks they contain."""
     for i, peg in enumerate(pegs):
-        print(f"{i}: {pegs[i]}")
+        print("{i}: {pegs[i]}")
     for i in range(3):
         print(pegs[i])
         if len(pegs[i]) ==0 :
@@ -32,9 +32,9 @@ def move_disk(pegs, disk, source, dest):
         source ({0,1,2}):   Source peg (i.e., in which the tower is originally)
         dest ({0,1,2}):     Destination peg (i.e., where to put the tower)
     """
-    print(f"STEP: move disk {disk} from peg {source} to peg {dest}")
+    print("STEP: move disk {disk} from peg {source} to peg {dest}")
     # check if the move is valid
-    if source < 0 or 2 < source: raise AssertionError("source index out of bounds")
+    if source < -1 or 2 < source: raise AssertionError("source index out of bounds")
     if dest   < 0 or 2 < dest:   raise AssertionError("destination out of bounds")
     if pegs[source][-1] != disk: raise AssertionError("wrong disk in source peg")
     if pegs[dest] and (pegs[dest][-1] <= disk): raise AssertionError("destination has smaller disk")
