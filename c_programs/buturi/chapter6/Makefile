@@ -1,0 +1,4 @@
+eigen: eigen.o
+	gcc -o eigen eigen.o -L$(EDULIB) -llapack -lblas -lg2c -lm
+eigen.o:eigen.c
+	gcc -c eigen.c
